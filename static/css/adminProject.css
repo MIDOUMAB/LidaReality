@@ -1,0 +1,578 @@
+:root{
+	--color1: #1A4D2E;
+	--color2: #4F6F52;
+	--lightcolor: #F0F0F0;
+	--color3:  #E8DFCA;
+	--color4:  #F5EFE6;
+    --clr1:  #414a58;
+    --clr2:  #D8C79F;
+    --bck1: #484848;
+    --bck2: #eee;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+/* Navbar */
+
+.navbar{
+    width: 100%;
+    height: 70px;
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 30;
+    position: relative;
+    background-color: #1A4D2E;
+    color: var(--color3);
+}
+.navbar .navbarContainer{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem ;
+    padding-bottom: 1rem ;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.navbar .navbarContainer .title{
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .navbarContainer .title img{
+    position: relative;
+    top: 1rem;
+}
+.navbar .navbarContainer .title .logo{
+    width: 11rem;
+    height: 6rem;
+}
+.navbar .navbarContainer .title .asal{
+    width: 3.3rem;
+    height: 2.7rem;
+    margin-left: .5rem;
+    top: .8rem;
+}
+.navbar .navbarContainer .title .flag{
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-left: .5rem;
+    top: .8rem;     
+}
+.navbar .navbarContainer .title #searchProject{
+    position: relative;
+    top: 1rem;
+    margin-left: 5rem;
+}
+.navbar .navbarContainer .account{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+    position: relative;
+}
+.navbar .navbarContainer .account .profileInfo{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profileList{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    overflow: hidden;
+    display: none;
+}
+.navbar .navbarContainer .account .profileList.activated{
+    display: block;
+}
+.navbar .navbarContainer .account .profileList li {
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    
+}
+.navbar .navbarContainer .account .profileList li:hover{
+    background-color: #eee;
+}
+.navbar .navbarContainer .account .profileList li a{
+    text-decoration: none;
+    color: #141E46;
+}
+.navbar .navbarContainer .account .profileInfo img{
+    width: .6rem;
+    margin-right: .7rem;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(1534%) hue-rotate(331deg) brightness(95%) contrast(90%);
+}
+.navbar .navbarContainer .account .profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .navbarContainer .account .profile img{
+    width: 1.4rem;
+    margin-right: .7rem;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(1534%) hue-rotate(331deg) brightness(95%) contrast(90%);
+}
+.navbar .navbarContainer .account .profile .name{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile .name span{
+    font-weight: 400;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profile i.profile{
+    position: relative;
+    left: 1rem;
+}
+.navbar .navbarContainer .account .profile a{
+    text-decoration: none;
+    background-color: white;
+    color: #141E46;
+    padding: .5rem 1rem;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.main{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh ;
+    display: flex;
+    flex-direction: row;
+}
+.main .threed{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    bottom: 0;
+}
+.main .threed #scansList{
+    position: absolute;
+    left: 3rem;
+    bottom: 3rem;
+    padding: .5rem 1rem;
+    z-index: 10;
+}
+.main .threed .settings{
+    position: absolute;
+    right: 2rem;
+    top: 5rem;
+    padding: .5rem 1rem;
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .threed .settings i{
+    color: white;
+    font-size: 1.3rem;
+}
+.main .threed .toolbar{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    z-index: 10;
+    background-color: #dddddd80;
+    padding: .5rem;
+    display: none;
+}
+.main .threed .toolbar i{
+    color: #141E46;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .threed .toolbar i:hover{
+    color: black;
+}
+.main .threed .toolbar i.activate{
+    color: black;
+}
+.panolens-canvas{
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+.main .threed .popup{
+    position: relative;
+    left: 1.3%;
+    top: -10%;
+	background-color: white;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	min-width: 100px;
+	color: #141E46;
+    z-index: 20;
+    /* display: none; */
+    transform: translate(50%);
+    font-size:.9rem
+}
+
+.main .threed .popup::after,.main .threed .popup::before{
+    top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.main .threed .popup::after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+  }
+  .main .threed .popup::before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+  }
+  .main .threed .popup .popupCloser{
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+    color: #141E46;
+    cursor: pointer;
+  }
+  .main .threed .popup .popupCloser:after {
+	content: "✖";
+  }
+
+  .main .rightBar{
+    width: 30%;
+    height: 100%;
+    padding: 7rem 1rem 1rem 1rem;
+    border-left: 1px solid #ccc;
+    position: relative;
+  }
+  .main .rightBar .choose{
+    margin-left: 9%;
+    text-align: center;
+    width:82%;
+    border: 1px solid #ccc;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+  .main .rightBar .choose  div{
+    width: 50%;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #141E46;
+    text-align: center;
+  }
+  .main .rightBar .choose  div.activated{
+    background-color: #ccc;
+  }
+  .main .rightBar .choose a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #141E46;
+    text-align: center;
+  }
+  .main .rightBar form{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+  }
+  .main .rightBar form input{
+    padding: .5rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid hsl(228, 56%, 18%);
+    margin-bottom: 1rem;
+  }
+  .main .rightBar .objBar .saveBtn{
+    margin: 0rem 2rem;
+    width: 82%;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid #141E46;
+    background-color: #141E46;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color .5s, background-color .5s;
+  }
+  .main .rightBar .saveBtn:hover{
+    background-color: #fff;
+    color: #141E46;
+}
+  .main .rightBar .selectBtn{
+    margin: 1rem  2rem 0 2rem;
+    width: 82%;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid var(--color1);
+    background-color: var(--color1);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color .5s, background-color .5s;
+  }
+  .main .rightBar .selectBtn:hover{
+    background-color: #fff;
+    color: var(--color1);
+}
+.main .rightBar .deleteBtn{
+    margin: 1rem  2rem 0 2rem;
+    width: 82%;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid var(--color1);
+    background-color: var(--color1);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color .5s, background-color .5s;
+  }
+  .main .rightBar .deleteBtn:hover{
+    background-color: #fff;
+    color: var(--color1);
+}
+  .main .rightBar .infospotBar{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
+    visibility: hidden;
+}
+.main .rightBar .infospotBar .addRelationBtn{
+    margin-top: 2rem;
+}
+.main .rightBar .infospotBar .addRelationBtn, .main .rightBar .infospotBar .deleteRelationBtn{
+    width: 70%;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid var(--color1);
+    background-color: var(--color1);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: color .5s, background-color .5s;
+}
+.main .rightBar .infospotBar .addRelationBtn:hover, .main .rightBar .infospotBar .deleteRelationBtn:hover{
+    background-color: #fff;
+    color: var(--color1);
+}
+.main .rightBar .infospotBar form{
+    padding: 1rem 4rem;
+}
+
+.main .rightBar .infospotBar .saveBtn{
+    width: 70%;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid #141E46;
+    background-color: #141E46;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: color .5s, background-color .5s;
+}
+.main .rightBar .infospotBar .saveBtn:hover{
+    background-color:white ;
+    color: #141E46;
+}   
+
+
+
+.measurementLabel {
+    font-family: monospace;
+    background-color: white;
+    color: #141E46;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.informationDiv{
+    font-family: monospace;
+    background-color: #eee;
+    color: #141E46;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: 2px solid #eee;
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    position: relative;
+}
+.informationDiv .boxCloser{
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+    z-index: 15;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+.informationDiv .boxCloser:after{
+    content: "✖";
+}
+.informationDiv .objImg{
+    height: 50%;
+    width: 100%;
+    background-image: url('../../static/icons/notFound.png');
+    background-position: center;
+    background-size: cover;
+}
+.informationDiv .objInfo{
+    height: 50%;
+    width: 100%;
+    padding: .5rem;
+}
+.informationDiv .objInfo p{
+    font-size: .9rem;
+    font-weight: 100;
+}
+
+.main .mapContainer{
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    visibility: hidden;
+}
+.main .mapContainer #map{
+    width: 100%;
+    height: 100%;
+}
+.main .mapContainer .ol-zoom, 
+.main .mapContainer .ol-rotate,
+.main .mapContainer .ol-attribution{
+    display: none !important;
+}
+
+
+
+.main .error{
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: 4rem;
+    background-color: #eee;
+    border-radius: 3rem;
+    border: 2px solid #141E46;
+    z-index: 20;
+    transition: 1s opacity;
+    opacity: 0;
+    visibility: hidden;
+}
+.main .error .errorContent{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items:center;
+}
+.main .error .errorContent i {
+    font-size: 2rem;
+    color: rgb(218, 218, 0);
+}
+.main .error .errorContent p{
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+@keyframes displayError {
+    0%{
+        top: -15%;
+        opacity: 0;
+    }
+    25%{
+        top: 15%;
+        opacity: 1;
+        animation-delay: 2s;
+    }
+    100%{
+        top: -15%;
+        opacity: 0;
+    }
+}
+

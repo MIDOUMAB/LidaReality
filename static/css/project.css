@@ -1,0 +1,563 @@
+:root{
+	--color1: #1A4D2E;
+	--color2: #4F6F52;
+	--lightcolor: #F0F0F0;
+	--color3:  #E8DFCA;
+	--color4:  #F5EFE6;
+    --clr1:  #414a58;
+    --clr2:  #D8C79F;
+    --bck1: #484848;
+    --bck2: #eee;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+/* Navbar */
+
+
+
+.navbar{
+    width: 100%;
+    height: 70px;
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 30;
+    position: relative;
+    background-color: #1A4D2E;
+    color: var(--color3);
+}
+.navbar .navbarContainer{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem ;
+    padding-bottom: 1rem ;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.navbar .navbarContainer .title{
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .navbarContainer .title img{
+    position: relative;
+    top: 1rem;
+}
+.navbar .navbarContainer .title .logo{
+    width: 11rem;
+    height: 6rem;
+}
+.navbar .navbarContainer .title .asal{
+    width: 3.3rem;
+    height: 2.7rem;
+    margin-left: .5rem;
+    top: .8rem;
+}
+.navbar .navbarContainer .title .flag{
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-left: .5rem;
+    top: .8rem;     
+}
+.navbar .navbarContainer .title #searchProject{
+    position: relative;
+    top: 1rem;
+    margin-left: 5rem;
+}
+.navbar .navbarContainer .account{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+    position: relative;
+}
+.navbar .navbarContainer .account .profileInfo{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profileList{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    overflow: hidden;
+    display: none;
+}
+.navbar .navbarContainer .account .profileList.activated{
+    display: block;
+}
+.navbar .navbarContainer .account .profileList li {
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    
+}
+.navbar .navbarContainer .account .profileList li:hover{
+    background-color: #eee;
+}
+.navbar .navbarContainer .account .profileList li a{
+    text-decoration: none;
+    color: #141E46;
+}
+.navbar .navbarContainer .account .profileInfo img{
+    width: .6rem;
+    margin-right: .7rem;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(1534%) hue-rotate(331deg) brightness(95%) contrast(90%);
+}
+.navbar .navbarContainer .account .profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .navbarContainer .account .profile img{
+    width: 1.4rem;
+    margin-right: .7rem;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(1534%) hue-rotate(331deg) brightness(95%) contrast(90%);
+}
+.navbar .navbarContainer .account .profile .name{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile .name span{
+    font-weight: 400;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profile i.profile{
+    position: relative;
+    left: 1rem;
+}
+.navbar .navbarContainer .account .profile a{
+    text-decoration: none;
+    background-color: white;
+    color: #141E46;
+    padding: .5rem 1rem;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+.main{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    bottom: 0;
+}
+.main .threed{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+}
+.main .threed #scansList{
+    position: absolute;
+    left: 3rem;
+    bottom: 3rem;
+    padding: .5rem 1rem;
+    z-index: 10;
+}
+.main .threed .settings{
+    position: absolute;
+    right: 2rem;
+    top: 5rem;
+    padding: .5rem 1rem;
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .threed .settings i{
+    color: white;
+    font-size: 1.3rem;
+}
+.main .threed .toolbar{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    z-index: 10;
+    background-color: #dddddd80;
+    padding: .5rem;
+}
+.main .threed .toolbar i,.main .leftToolbar i{
+    color: #1A4D2E;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .threed .toolbar i:hover,.main .leftToolbar i:hover{
+    color: black;
+}
+.main .threed .toolbar i.activate,.main .leftToolbar i:activate{
+    color: black;
+}
+.panolens-canvas{
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+.panolens-canvas div{
+    position: absolute;
+    bottom: 50%;
+    z-index: 30;
+}
+.main .threed .popup{
+    position: relative;
+    left: 1.3%;
+    top: -10%;
+	background-color: white;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	min-width: 100px;
+	color: #141E46  ;
+    z-index: 20;
+    transform: translate(50%)
+}
+
+.main .threed .popup::after,.main .threed .popup::before{
+    top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.main .threed .popup::after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+  }
+  .main .threed .popup::before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+  }
+  .main .threed .popup .popupCloser{
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+    color: #141E46;
+    cursor: pointer;
+  }
+  .main .threed .popup .popupCloser:after {
+	content: "✖";
+  }
+
+  .measurementLabel {
+    font-family: monospace;
+    background-color: white;
+    color: #141E46;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .mapContainer{
+    position: absolute;
+    width: 25%;
+    height: 40%;
+    z-index: 20;
+    bottom: 1rem;
+    left: 1rem;
+    border-radius: 3rem;
+    border: .3rem solid #141E46;
+    overflow: hidden;
+    transition: 1s opacity;
+}
+.main .mapContainer #map{
+    width: 100%;
+    height: 100%;
+}
+.main .mapContainer .ol-zoom, 
+.main .mapContainer .ol-rotate,
+.main .mapContainer .ol-attribution{
+    display: none !important;
+}
+
+
+.main .toolbar.activated,
+.navbar.activated,
+.mapContainer.activated{
+    display: none;
+}
+
+.main .leftToolbar{
+    position: absolute;
+    z-index: 20;
+    top: 1rem;
+    left: 1rem;
+    width: 5rem;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: start;
+    border-radius: 5rem 0 0 5rem ;
+    display: none;
+}
+
+
+.informationDiv{
+    font-family: monospace;
+    background-color: #eee;
+    color: #141E46;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: 2px solid #eee;
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    position: relative;
+}
+.informationDiv .boxCloser{
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+    z-index: 15;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+.informationDiv .boxCloser:after{
+    content: "✖";
+}
+.informationDiv .objImg{
+    height: 50%;
+    width: 100%;
+    background-image: url('../../static/icons/notFound.png');
+    background-position: center;
+    background-size: cover;
+}
+.informationDiv .objInfo{
+    height: 50%;
+    width: 100%;
+    padding: .5rem;
+}
+.informationDiv .objInfo p{
+    font-size: .9rem;
+    font-weight: 100;
+}
+
+
+.main .error{
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: 4rem;
+    background-color: #eee;
+    border-radius: 3rem;
+    border: 2px solid #141E46;
+    z-index: 20;
+    transition: 1s opacity;
+    opacity: 0;
+    visibility: hidden;
+}
+.main .error .errorContent{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items:center;
+}
+.main .error .errorContent i {
+    font-size: 2rem;
+    color: rgb(218, 218, 0);
+}
+.main .error .errorContent p{
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+.main .disableCardboard{
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    z-index: 30;
+    width: 10rem;
+    display: none;
+}
+.main .disableCardboard hr{
+    color: white;
+    font-size: 8rem;
+    height: 1.5rem;
+    background-color: white;
+}
+
+@keyframes displayError {
+    0%{
+        top: -15%;
+        opacity: 0;
+    }
+    25%{
+        top: 15%;
+        opacity: 1;
+        animation-delay: 2s;
+    }
+    100%{
+        top: -15%;
+        opacity: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 1067px) and (orientation: landscape){
+/* @media screen and (min-height: 320px) and (max-height: 1067px) and (orientation: landscape) { */
+    /* html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    } */
+
+    .navbar{
+        position: fixed;
+        background-color: transparent;
+    }
+
+    .navbar .navbarContainer .title{
+        text-align: left;
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar .navbarContainer .title img{
+        position: relative;
+    }
+    .navbar .navbarContainer .title .logo{
+        width: 7rem;
+        height: 4rem;
+    }
+    .navbar .navbarContainer .title .asal{
+        width: 2.6rem;
+        height: 2.3rem;
+        top: .8rem;
+    }
+    .navbar .navbarContainer .title .flag{
+        width: 3.1rem;
+        height: 3.1rem;
+        top: .8rem;     
+    }
+
+    .navbar .navbarContainer .account .profile img{
+        width: 1rem;
+    }
+    .navbar .navbarContainer .account .profile .name{
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: .8rem;
+    }
+    .navbar .navbarContainer .account .profile .name span{
+        font-weight: 400;
+        font-size: .7rem;
+    }
+    
+    .navbar .navbarContainer .account .profileInfo{
+        margin-right: .5rem;
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+    .navbar .navbarContainer .account .profileList li {
+        font-size: .8rem;
+    }
+    .navbar .navbarContainer .account .profileInfo img{
+        width: .5rem;
+        margin-right: .3rem;
+    }
+
+    .main .threed .toolbar{
+        column-gap: .7rem;
+    }
+    .main .threed .toolbar i{
+        color: #1A4D2E;
+        font-size: .9rem;
+        cursor: pointer;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #eee;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main .mapContainer{
+        display: none;
+    }
+}
+
+

@@ -1,0 +1,138 @@
+:root{
+	--color1: #141E46;
+	--color2: #41B06E;
+	--lightcolor: #F0F0F0;
+	--color3:  #8DECB4;
+	--color4:  #FFF5E0;
+    --clr1:  #414a58;
+    --clr2:  #D8C79F;
+    --bck1: #AAA9B8;
+    --bck2: #eee;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    /* font-family: "Poppins", sans-serif; */
+    font-family: "Rokkitt", serif;
+    font-weight: 300;
+    font-style: normal;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+/* Navbar */
+
+.navbar{
+    width: 100%;
+    height: 70px;
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 10;
+    color: #141E46;
+    border-bottom: 1px solid #ccc;
+}
+.navbar .navbarContainer{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem ;
+    padding-bottom: 1rem ;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.navbar .navbarContainer .title{
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .navbarContainer .title img{
+    position: relative;
+    top: 1rem;
+    width: 10rem;
+    height: 5rem;
+}
+.navbar .navbarContainer .title #searchProject{
+    position: relative;
+    top: 1rem;
+    margin-left: 5rem;
+}
+input{
+    margin-left: 1.5rem;
+    width: 30rem;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #7f8ece;
+}
+
+.navbar .navbarContainer .account{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+}
+.navbar .navbarContainer .account .profileInfo{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+.navbar .navbarContainer .account .profileInfo img{
+    width: .6rem;
+    margin-right: .7rem;
+}
+.navbar .navbarContainer .account .profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .navbarContainer .account .profile img{
+    width: 1.4rem;
+    margin-right: .7rem;
+}
+.navbar .navbarContainer .account .profile .name{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.navbar .navbarContainer .account .profile .name span{
+    font-weight: 400;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profile i.profile{
+    position: relative;
+    left: 1rem;
+}
+.navbar .navbarContainer .account .profile a{
+    text-decoration: none;
+    background-color: white;
+    color: #141E46;
+    padding: .5rem 1rem;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LidaReality - map</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{url_for('static',filename='dist/ol.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='dist/ol-ext.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/map.css')}}">
+ 
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbarContainer">
+        <div class="title">
+            <img src="../../static/icons/L (4).png" class="logo"/>
+            <img src="../../static/icons/asal.png" class="asal"/>
+            <img src="../../static/icons/flag2.png" class="flag"/>
+        </div>
+        
+        <div class="account">
+            <div class="profileInfo"><img src="../../static/icons/caret-down-solid.svg" alt="#">My Profile</div>
+            <ul class="profileList">
+              <li class="profileInformation"><a href="#">Profile informaiton</a></li>
+              <li class="logout"><a href="/logout">Log Out</a></li>
+            </ul>
+            <div class="profile">
+            <img src="../../static/icons/id-badge-solid.svg" alt="#">
+            <div class="name">{{name}}<span>User</span></div>
+            </div>
+            
+        </div>
+    </div>
+</nav>
+<div class="filterBar">
+    <div class="filterBarContainer">
+        <h3>Filtering</h3>
+        <form action="#" class="filteringForm" method="post">
+          <input type="text" class="project" name="project" placeholder="Search by name of project">
+          <input type="text" class="location" name="location" placeholder="Search by name of location">
+          <!-- <input type="text" class="radius" name="radius" placeholder="Set circle radius (m)"> -->
+          <input type="date" class="date" name="date">
+          <!-- <a href="#" class="clear">Clear All</a> -->
+          <a href="#" class="clear">Clear All</a>
+        </form>
+    </div>
+</div>
+
+
+
+  <div class="container">
+    <div class="sidebar">
+      <!-- <div class="project activated">
+        <div class="boxProject">
+          <div class="infoProject">
+            <div class="aboutProject">
+              <h3>titleProject</h3>
+              <p>Oran, Alger</p>
+            </div>
+            <div class="btnProject">
+              <img class="imageIcon white activated" id="infoBtn" src="../../static/icons/circle-info-solid.svg" >
+              <img class="imageIcon white" id="enterBtn" src="../../static/icons/play-solid.svg" >
+            </div>
+          </div>
+        </div>
+        <div class="descProject">
+          <p class="date"><span>Date :</span> 12-12-2012</p>
+          <p class="address"><span>Address :</span> Oran, Algeria</p>
+          <p class="location"><span>Location :</span> (7123891<span>.</span>123 <span>,</span> 12345<span>.</span>123) (m)</p>
+          <p class="description"><span>Description :</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, </p>
+        </div>
+    </div> -->
+      
+    </div>
+    <div id="map"></div>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="https://kit.fontawesome.com/08f65554c5.js" crossorigin="anonymous"></script>
+  <script src="{{url_for('static', filename = 'dist/jquery.min.js')}}"></script> 
+  <script src="{{url_for('static', filename = 'dist/proj4.js')}}"></script> 
+  <script src="{{url_for('static', filename = 'dist/ol.js')}}"></script> 
+  <script src="{{url_for('static', filename = 'dist/ol-ext.min.js')}}"></script> 
+  <script src="{{url_for('static', filename = 'dist/geotiff.js')}}"></script> 
+  <script src="{{url_for('static', filename = 'js/map.js')}}" type="module"></script> 
+
+  
+</body>
+</html>

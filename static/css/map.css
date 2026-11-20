@@ -1,0 +1,401 @@
+:root{
+	--color1: #1A4D2E;
+	--color2: #4F6F52;
+	--lightcolor: #F0F0F0;
+	--color3:  #E8DFCA;
+	--color4:  #F5EFE6;
+    --clr1:  #414a58;
+    --clr2:  #D8C79F;
+    --bck1: #484848;
+    --bck2: #eee;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+/* navbar */
+
+.navbar{
+    width: 100%;
+    height: 70px;
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 30;
+    position: relative;
+    background-color: #1A4D2E;
+    color: var(--color3);
+}
+.navbar .navbarContainer{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem ;
+    padding-bottom: 1rem ;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.navbar .navbarContainer .title{
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .navbarContainer .title img{
+    position: relative;
+    top: 1rem;
+}
+.navbar .navbarContainer .title .logo{
+    width: 11rem;
+    height: 6rem;
+}
+.navbar .navbarContainer .title .asal{
+    width: 3.3rem;
+    height: 2.7rem;
+    margin-left: .5rem;
+    top: .8rem;
+}
+.navbar .navbarContainer .title .flag{
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-left: .5rem;
+    top: .8rem;     
+}
+.navbar .navbarContainer .title #searchProject{
+    position: relative;
+    top: 1rem;
+    margin-left: 5rem;
+}
+input{
+    margin-left: 1.5rem;
+    width: 15rem;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #4F6F52;
+}
+
+.navbar .navbarContainer .account{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+    position: relative;
+}
+.navbar .navbarContainer .account .profileInfo{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profileList{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    overflow: hidden;
+    display: none;
+}
+.navbar .navbarContainer .account .profileList.activated{
+    display: block;
+}
+.navbar .navbarContainer .account .profileList li {
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    
+}
+.navbar .navbarContainer .account .profileList li:hover{
+    background-color: #eee;
+}
+.navbar .navbarContainer .account .profileList li a{
+    text-decoration: none;
+    color: #141E46;
+}
+.navbar .navbarContainer .account .profileInfo img{
+    width: .6rem;
+    margin-right: .7rem;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(1534%) hue-rotate(331deg) brightness(95%) contrast(90%);
+}
+.navbar .navbarContainer .account .profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .navbarContainer .account .profile img{
+    width: 1.4rem;
+    margin-right: .7rem;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(1534%) hue-rotate(331deg) brightness(95%) contrast(90%);
+}
+.navbar .navbarContainer .account .profile .name{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile .name span{
+    font-weight: 400;
+    font-size: 1rem;
+}
+.navbar .navbarContainer .account .profile i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.navbar .navbarContainer .account .profile i.profile{
+    position: relative;
+    left: 1rem;
+}
+.navbar .navbarContainer .account .profile a{
+    text-decoration: none;
+    background-color: white;
+    color: #141E46;
+    padding: .5rem 1rem;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+/* FilterBar */
+.filterBar{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+}
+ 
+.filterBar .filterBarContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .5rem 2rem;
+    width: 100%;
+}
+.filterBar .filterBarContainer .filteringForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+}
+.filterBar .filterBarContainer h3{
+    font-size: 1.3rem;
+}
+.filterBar .filterBarContainer input{
+    width: calc((100% - 10rem ) / 3 );
+}
+.filterBar .filterBarContainer .clear{
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    background-color: var(--color1);
+    border: 2px solid var(--color1);
+    color: var(--color4);
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    width: 10%;
+    text-align: center;
+    transition: .5s;
+}
+.filterBar .filterBarContainer .clear:hover{
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+
+
+/* container */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 120px);
+    position: relative;
+}
+
+
+#map {
+    width: 70%;
+    height: 100%;
+}
+.container .sidebar{
+    position: relative;
+    width: 30%;
+    height: 100%;
+    padding: 1.5rem;
+    overflow: auto;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+.container .sidebar .project{
+    min-height: 200px;
+    width:100%;
+    border: 2px solid #0c122b;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.container .sidebar .boxProject{
+    height: 200px;
+    width:100%;   
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../../static/projects/Scan_000.jpg');  
+}
+.container .sidebar .boxProject #infoBtn{
+    width: 2rem;
+}
+.container .sidebar .boxProject .infoProject{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background-color: #00000095;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .2rem 1rem;
+    color: white;
+}
+.container .sidebar .boxProject .infoProject .aboutProject p{
+    font-size: 1rem;
+}
+.container .sidebar .boxProject .infoProject .aboutProject{
+    width: 50%;
+}
+.container .sidebar .boxProject .infoProject .btnProject{
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: right;
+    width: 50%;
+    text-align: right;
+}
+.container .sidebar .boxProject .infoProject .btnProject .imageIcon{
+    width: 1.5rem;
+    cursor: pointer;
+}
+.imageIcon.white{
+    filter: invert(100%) sepia(0%) saturate(7451%) hue-rotate(145deg) brightness(101%) contrast(108%);
+}
+.imageIcon.blue{
+    filter: invert(15%) sepia(50%) saturate(606%) hue-rotate(188deg) brightness(94%) contrast(110%);
+}
+
+
+.container .sidebar .title{
+    font-weight: 500;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    color: var(--lightcolor);
+    cursor: pointer;
+    position: relative;
+    background-color: #0c122b;
+}
+.container .sidebar .title img{
+    position: relative;
+    top: .5rem;
+    width: 10rem;
+    height: 5rem;
+}
+.container .sidebar .project .descProject{
+    padding: 1rem;
+    height: 200px;
+    display: none;
+}
+.container .sidebar .project .descProject p{
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+.container .sidebar .project .descProject p span{
+    font-weight: 600;
+}
+.container .sidebar .project.activated{
+    min-height: 400px;
+}
+.container .sidebar .project.activated .boxProject .infoProject .btnProject #infoBtn{
+    filter: brightness(0) saturate(100%) invert(63%) sepia(54%) saturate(2926%) hue-rotate(19deg) brightness(101%) contrast(101%);
+}
+.container .sidebar .project.activated .descProject{
+    display: block;
+}
+
+/* .container .sidebar .project{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 1.5rem;
+}
+.container .sidebar .project .projectTitle{
+    text-align: center;
+    font-size: 1.7rem;
+}
+.container .sidebar .project .image{
+    width: 100%;
+    height: 40%;
+    background-image: url('../../static//projects/Scan_000.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.container .sidebar .project .info{
+    width: 100%;
+    height: 40%;
+}
+.container .sidebar .project .info p{
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+}
+.container .sidebar .project .info p span{
+    font-weight: bold;
+}
+.container .sidebar .project .start{
+    padding: .5rem;
+    border-radius: 2rem;
+    background-color: #141E46;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: .2s background-color;
+}
+.container .sidebar .project .start:hover{
+    background-color: #0c122b;
+    cursor: pointer;
+}
+ */
+
+
+
+
+
+
+

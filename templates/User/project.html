@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LidaReality - project</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/project.css')}}">
+    <script>
+        var imageUrl = '{{url}}'
+        var imageColor = '{{imgColor}}'
+        var imagePos = JSON.parse('{{pos}}')
+        var imageRot = JSON.parse('{{rot}}')
+        var folderName = '{{folder_name}}'
+        var id = '{{id}}'
+    </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbarContainer">
+            <div class="title">
+                <img src="../../static/icons/L (4).png" class="logo"/>
+                <img src="../../static/icons/asal.png" class="asal"/>
+                <img src="../../static/icons/flag2.png" class="flag"/>
+            </div>
+            
+            <div class="account">
+                <div class="profileInfo"><img src="../../static/icons/caret-down-solid.svg" alt="#">My Profile</div>
+                <ul class="profileList">
+                    <li class="profileInformation"><a href="#">Profile informaiton</a></li>
+                    <li class="logout"><a href="/logout">Log Out</a></li>
+                </ul>
+                <div class="profile">
+                <img src="../../static/icons/id-badge-solid.svg" alt="#">
+                <div class="name">{{name}}<span>User</span></div>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="threed" id="3d">
+            <div class="toolbar">
+                <i class="fa-solid fa-expand" id="fullscreen"></i>
+                <i class="fa-solid fa-panorama disactivate" id="panorama"></i>
+                <i class="fa-solid fa-vr-cardboard" id="vr"></i>
+                <i class="fa-solid fa-hand-pointer" id="position"></i>
+                <i class="fa-solid fa-route" id="distance"></i>
+                <i class="fa-solid fa-info disactivate" id="information"></i>
+                <i class="fa-solid fa-eye" id="disactivateMap"></i>
+                <i class="fa-solid fa-map" id="carte"></i>
+                <!-- <i class="fa-solid fa-map-location-dot"></i> -->
+                <i class="fa-solid fa-magnifying-glass-location" id="zoomToLayer"></i>
+            </div>
+            <div class="error">
+                <div class="errorContent">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Unavailable data</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mapContainer">
+            <div id="map"></div>
+        </div>
+
+        <div class="disableCardboard"><hr></div>
+
+
+
+    </main>
+
+
+    <form style="display: none" method="POST" id="formLookAt">
+        <input type="hidden" id="varX" name="varX" value=""/>
+        <input type="hidden" id="varY" name="varY" value=""/>
+        <input type="hidden" id="varZ" name="varZ" value=""/>
+    </form>
+
+
+
+
+    <script src="https://kit.fontawesome.com/08f65554c5.js" crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"
+        integrity="sha512-uWKImujbh9CwNa8Eey5s8vlHDB4o1HhrVszkympkm5ciYTnUEQv3t4QHU02CUqPtdKTg62FsHo12x63q6u0wmg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    <script src="{{url_for('static', filename = 'dist/panolens.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'dist/proj4.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'dist/jquery.min.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'dist/ol.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'dist/ol-ext.min.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/project.js')}}" type="module"></script> 
+</body>
+</html>

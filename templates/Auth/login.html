@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LidaReality - Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbarContainer">
+          <div class="title">
+              <img src="../../static/icons/L (4).png" class="logo"/>
+              <img src="../../static/icons/asal.png" class="asal"/>
+              <img src="../../static/icons/flag2.png" class="flag"/>
+          </div>
+      </div>
+  </nav>
+  <nav class="rightNavbar">
+      <div class="navbarContainer">
+          <ul class="list">
+              <a href="http://127.0.0.1:5000/#home"><li class="item">Home</li></a>
+              <a href="http://127.0.0.1:5000/#projects"><li class="item">Projects</li></a>
+              <a href="http://127.0.0.1:5000/#services"><li class="item">Services</li></a>
+              <a href="http://127.0.0.1:5000/#process"><li class="item">Process</li></a>
+          </ul> 
+      </div>
+  </nav>
+
+    <div class="main">  	
+      <input type="checkbox" id="chk" aria-hidden="true">
+  
+        <div class="signup">
+          <form action="/register" method="post">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type="text" name="username" placeholder="User name" required="">
+            <input type="email" name="email" placeholder="Email" required="">
+            <input type="password" name="password" placeholder="Password" required="">
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" required="">
+            <button>Sign up</button>
+          </form>
+        </div>
+  
+        <div class="login">
+          <form action="/login" method="post">
+            <label for="chk" aria-hidden="true">Login</label>
+            <input type="text" name="username" placeholder="User name" required="">
+            <input type="password" name="password" placeholder="Password" required="">
+            <button>Login</button>
+          </form>
+        </div>
+    </div>
+    
+    
+
+
+
+    <script src="https://kit.fontawesome.com/08f65554c5.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    <script src="{{url_for('static', filename = 'dist/jquery.min.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'js/Homepage.js')}}"></script> 
+  </body>
+</html>

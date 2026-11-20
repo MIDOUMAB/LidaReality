@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LidaReality - Register</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/register.css')}}">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbarContainer">
+          <div class="title">
+              <img src="../../static/icons/L (6).png"/>
+          </div>
+          
+          <div class="account">
+              <div class="profileInfo"><img src="../../static/icons/play-solid.svg" alt="#">My Profile</div>
+              <div class="profile">
+              <img src="../../static/icons/id-badge-solid.svg" alt="#">
+              <div class="name">Benzina Mohamed<span>User</span></div>
+              </div>
+              
+          </div>
+      </div>
+  </nav>
+
+    <h1>Create an account</h1>
+    <form action="#" method="post">
+      <label for="username">Username:</label>
+      <input type="text" name="username" />
+      <label for="email">Email:</label>
+      <input type="text" name="email" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" />
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" name="confirmPassword" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="https://kit.fontawesome.com/08f65554c5.js" crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"
+        integrity="sha512-uWKImujbh9CwNa8Eey5s8vlHDB4o1HhrVszkympkm5ciYTnUEQv3t4QHU02CUqPtdKTg62FsHo12x63q6u0wmg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script src="{{url_for('static', filename = 'dist/jquery.min.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'js/AdminHome.js')}}" type="module"></script> 
+  </body>
+  
+</html>
